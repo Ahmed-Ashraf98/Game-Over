@@ -16,6 +16,22 @@
     --loading-bg-rgb: 39, 43, 48;
 }
 
+/** =================== Scroll ========================  */
+
+::-webkit-scrollbar {
+    width: 0.625rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 0.5) inset;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--seconde-bg-color);
+}
+
 /** ===================  Utilities ======================= */
 
 .w-20{
