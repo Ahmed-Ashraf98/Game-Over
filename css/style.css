@@ -1,0 +1,162 @@
+/** =================== Fonts Setting ======================*/
+@font-face{
+    font-family: Poppins;
+    src: url("../webfonts/Poppins/Poppins-Light.ttf");
+    font-weight: 100;   
+}
+
+/** ==================== Global ========================  */
+
+:root{
+    --main-font : cursive;
+    --main-bg-color:#272b30;
+    --nav-link-hover-color :#09c ;
+    --main-txt-color:#fff;
+    --seconde-bg-color : #32383e;
+}
+
+/** ===================  Utilities ======================= */
+
+.w-20{
+    width: 20%;
+}
+
+/** =================== General Setting ======================*/
+
+*{
+    word-break: break-all;
+}
+
+body{
+    color:var(--main-txt-color);
+    font-family: var(--main-font);
+    background: var(--main-bg-color);
+}
+
+input[type="text"],input[type="email"],input[type="url"],textarea {
+    color: var(--main-txt-color);
+    background: #1e202b;
+}
+
+/* * ========================= Header ========================= */
+
+.banner img{
+    max-height: 40vh;
+    object-fit: cover;
+}
+
+/* * ========================= Navbar ========================= */
+
+nav{
+    background-color: rgb(58, 73, 123);
+    box-shadow: 0 0 10px rgb(0 0 0 / 0.7);
+}
+.navbar a{
+    color: var(--main-txt-color);
+    word-break: break-all;
+    white-space:wrap;
+}
+
+ul.navbar-nav{
+    font-size:13px;
+}
+
+.navbar-brand:hover{
+    color: var(--main-txt-color);
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+    color: var(--nav-link-hover-color );
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: var(--nav-link-hover-color );
+}
+
+
+/* * ==================== Card ======================= */
+
+.card{
+    transition: all 0.5s;
+    & img {
+        filter: grayscale(70%);
+        transition: all 0.5s;
+    }
+}
+.card:hover{
+    transform: scale(1.05);
+    & img {
+        filter: grayscale(0%);
+    }
+
+    & .custom-badge{
+        background-color: rgba(13,110,253,1);
+    }
+}
+
+.card-body {
+    padding: 5px; 
+}
+
+.custom-badge{
+    background-color: rgba(13,110,253,0.2);
+    transition: all 0.5s;
+}
+
+.footer-badge-color {
+    background-color: var(--seconde-bg-color);
+    word-break: break-all;
+    white-space:wrap;
+}
+
+
+
+/*& ======================== Details Modal Style =========================  */
+
+#closeBtn{
+    transition: all 0.5s;
+}
+
+#closeBtn:hover{
+    color: red;
+}
+
+#closeBtn:focus{
+    border: 2px solid red;
+}
+
+
+/* ? ================= Loading ========================== */
+
+
+.loader {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 4px solid #FFF;
+    border-right: 4px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border-left: 4px solid #FF3D00;
+    border-bottom: 4px solid transparent;
+    animation: rotation 0.5s linear infinite reverse;
+  }
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
