@@ -6,9 +6,9 @@ class GameDetails{
 
     constructor(id){
         this.id = id;
-        this.ui = new UI();
-        this.getGameDetails(id);
-        this.addCloseBtnEvent();
+        this.ui = new UI(); // Create instance from ui, so we can hid / show / display
+        this.getGameDetails(id); // Get the game details by the given id
+        this.addCloseBtnEvent(); // Add close action for close icon in the game details screen
     }   
 
 
@@ -33,9 +33,9 @@ class GameDetails{
                 let gameObj = await response.json();
    
                 console.log(gameObj);
-                this.ui.displayDetails(gameObj); // dispaly the games list based on the clicked link
-                this.ui.hideLoading();
-                this.ui.showGamesDetailsView();                
+                this.ui.displayDetailsOfObj(gameObj); // dispaly the game details
+                this.ui.hideLoading(); // Hide loading after getting the data
+                this.ui.showGameDetailsView(); // Show the game details screen             
               } else {
                 console.log(response);
                 // Custom message for failed HTTP codes
@@ -52,8 +52,8 @@ class GameDetails{
     addCloseBtnEvent(){
         // This function to add close event when user click on X icon to close the game details
        document.getElementById("closeBtn").addEventListener("click",()=>{
-            this.ui.hideGamesDetailsView(); // hide the game details
-            this.ui.showGamesView(); // show the current games list view
+            this.ui.hideGameDetailsView(); // hide the game details
+            this.ui.showGamesLisView(); // show the current games list view
        })
     }
 

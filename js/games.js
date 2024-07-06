@@ -6,9 +6,9 @@ import { GameDetails } from "./details.js";
 class Games{
 
     constructor(category){
-        this.ui = new UI();  // Create instance from ui
-        this.getGamesByCategory(category);
-        this.addNavEvents();
+        this.ui = new UI();  // Create instance from ui, so we can hid / show / display
+        this.getGamesByCategory(category); // Get all games by the given category name
+        this.addNavEvents(); // Add click events for the navbar links 
     }
 
     async getGamesByCategory(category){
@@ -28,7 +28,7 @@ class Games{
 
         try{
        
-            this.ui.hideGamesView();
+            this.ui.hideGamesListView();
             this.ui.showLoading();
            
             let response = await fetch(`${baseUrl}/${endPoint}?${queryParams}`,options);
@@ -36,9 +36,9 @@ class Games{
             if (response.ok) { // if response is OK, then display data
                 let gamesList = await response.json();
         
-                this.ui.displayData(gamesList); // dispaly the games list based on the clicked link
-                this.ui.hideLoading();
-                this.ui.showGamesView();
+                this.ui.displayDataList(gamesList); // dispaly the games list based on the clicked link
+                this.ui.hideLoading(); // Hide loading after getting the data
+                this.ui.showGamesLisView(); // Show the games list screen    
                 this.addCardsEvents(); // Add click events for the created cards, so we can click on any card to display the game details
                 
               } else {
@@ -78,10 +78,10 @@ class Games{
             card.addEventListener("click",()=>{
 
                 // 1- Call Hide Home / Games section function
-                this.ui.hideGamesView();
+                this.ui.hideGamesListView();
                 // 2- Show Loading
                 this.ui.showLoading();
-                // 3- Create instance from GameDetails
+                // 3- Create instance from GameDetails, to display the game details
                 new GameDetails(card.getAttribute("data-id"));
 
             })

@@ -18,33 +18,33 @@ class UI {
     document.getElementById("loader").classList.add("d-none");
   }
 
-  showGamesView() {
+  showGamesLisView() {
     // This function used to show the games view (games section)
-    document.getElementById("gamesView").classList.remove("d-none");
-    document.getElementById("gamesView").classList.add("d-block");
+    document.getElementById("gamesListView").classList.remove("d-none");
+    document.getElementById("gamesListView").classList.add("d-block");
   }
 
-  hideGamesView() {
+  hideGamesListView() {
     // This function used for hidding the games view (games section)
-    document.getElementById("gamesView").classList.remove("d-block");
-    document.getElementById("gamesView").classList.add("d-none");
+    document.getElementById("gamesListView").classList.remove("d-block");
+    document.getElementById("gamesListView").classList.add("d-none");
   }
 
 
-  showGamesDetailsView() {
+  showGameDetailsView() {
     // This function used to show the games details view (games deatils section)
-    document.getElementById("gamesDetailsView").classList.remove("d-none");
-    document.getElementById("gamesDetailsView").classList.add("d-block");
+    document.getElementById("gameDetailsView").classList.remove("d-none");
+    document.getElementById("gameDetailsView").classList.add("d-block");
   }
 
-  hideGamesDetailsView() {
+  hideGameDetailsView() {
     // This function used for hidding the games details view (games deatils section)
-    document.getElementById("gamesDetailsView").classList.remove("d-block");
-    document.getElementById("gamesDetailsView").classList.add("d-none");
+    document.getElementById("gameDetailsView").classList.remove("d-block");
+    document.getElementById("gameDetailsView").classList.add("d-none");
   }
 
 
-  displayData(dataList) {
+  displayDataList(dataList) {
 
     let htmlBox = ``;
 
@@ -76,7 +76,7 @@ class UI {
 
   }
 
-  displayDetails(dataObj) {
+  displayDetailsOfObj(dataObj) {
     let htmlBox = `
             <div class="col-md-4">
                 <figure class="rounded rounded-3 overflow-hidden">
