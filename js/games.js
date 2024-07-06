@@ -6,14 +6,14 @@ import { GameDetails } from "./details.js";
 class Games{
 
     constructor(category){
-        this.ui = new UI();   
+        this.ui = new UI();  // Create instance from ui
         this.getGamesByCategory(category);
         this.addNavEvents();
     }
 
     async getGamesByCategory(category){
         
-        const baseUrl = "https://free-to-play-games-database.p.rapidapi.com/api/games"; 
+        const baseUrl = "https://free-to-play-games-database.p.rapidapi.com/api"; 
         const apiKey = "228e12081dmshf28115fb9df7ac2p189652jsn154d42a77d09";
         const options = {
             method: 'GET',
@@ -23,18 +23,24 @@ class Games{
             }
         };
 
+        let endPoint ="games";
         let queryParams = `category=${category}`;
 
         try{
-            //TODO:  Run loader
-            let response = await fetch(`${baseUrl}?${queryParams}`,options);
+       
+            this.ui.hideGamesView();
+            this.ui.showLoading();
+           
+            let response = await fetch(`${baseUrl}/${endPoint}?${queryParams}`,options);
     
             if (response.ok) { // if response is OK, then display data
                 let gamesList = await response.json();
-                //TODO: Stop loader
+        
                 this.ui.displayData(gamesList); // dispaly the games list based on the clicked link
+                this.ui.hideLoading();
+                this.ui.showGamesView();
                 this.addCardsEvents(); // Add click events for the created cards, so we can click on any card to display the game details
-               
+                
               } else {
                 console.log(response);
                 // Custom message for failed HTTP codes
@@ -63,16 +69,21 @@ class Games{
 
 
 
+
     addCardsEvents(){
        // This function to add the "click" events for all created cards
        // This event will enable [ click to show game details feature ] which allow us to display more details on the clciked game 
 
         document.querySelectorAll(".card").forEach((card)=>{
-            card.addEventListener("click",function(){
-                // console.log(card);
+            card.addEventListener("click",()=>{
+
                 // 1- Call Hide Home / Games section function
-                // 2- Loading
-                // 3- Display the the game details
+                this.ui.hideGamesView();
+                // 2- Show Loading
+                this.ui.showLoading();
+                // 3- Create instance from GameDetails
+                new GameDetails(card.getAttribute("data-id"));
+
             })
         })
 

@@ -13,6 +13,7 @@
     --nav-link-hover-color :#09c ;
     --main-txt-color:#fff;
     --seconde-bg-color : #32383e;
+    --loading-bg-rgb: 39, 43, 48;
 }
 
 /** ===================  Utilities ======================= */
@@ -130,10 +131,11 @@ ul.navbar-nav{
 
 
 .loader {
+    background-color: rgba(var(--loading-bg-rgb,0.8));
+    z-index: 9999;
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    display: inline-block;
     border-top: 4px solid #FFF;
     border-right: 4px solid transparent;
     box-sizing: border-box;

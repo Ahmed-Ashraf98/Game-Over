@@ -11,17 +11,18 @@
 
   <body>
 
-    <!-- <div id="loader" class="vh-100 d-flex justify-content-center align-items-center">
-      <span class="loader"></span>
-    </div> -->
     
 
-    <section id="home" class="">
+    
+    
+
+    <section id="gamesView">
   
       <header class="banner">
         <img src="./images/wraper.png" alt="games banner" class="w-100">
       </header>
-  
+
+
       <nav class="navbar navbar-expand-lg container rounded rounded-4 position-sticky top-0 z-3">
         <div class="container">
           <a class="navbar-brand text-uppercase fw-bold p-0" href="#">
@@ -60,25 +61,6 @@
         <section>
           <div class="container">
             <div class="row gy-3 gx-0 gx-sm-4" id="gamesAllData">
-              <div class="col-12 col-md-6 col-lg-4">
-                <div class="card bg-transparent text-white" role="button" data-id="">
-                  <div class="card-body-wrapper p-1 p-sm-3">
-                    <img src="./images/thumbnail.jpg" class="card-img-top" alt="...">
-                    <div class="card-body mt-2">
-                      <div class="d-flex justify-content-between align-items-center flex-wrap">
-                        <p class="card-title">Card title</p>
-                        <p><span class="badge custom-badge p-2">Free</span></p>
-                      </div>
-                      <p class="card-body text-center opacity-50">Some quick example text to build on the card title and make up the bulk of the card's content.</p>  
-                  </div>
-                 
-                  </div>
-                  <div class="card-footer d-flex justify-content-between flex-wrap">
-                    <span class="badge footer-badge-color mb-1 mb-sm-0">Secondary</span>
-                    <span class="badge footer-badge-color mb-1 mb-sm-0">Secondary</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
@@ -86,32 +68,21 @@
 
     </section>
 
-    <!-- <section id="detailsModal">
+    <section id="gamesDetailsView" class="d-none">
       <div class="container">
        <div class="custom-modal mt-5">
           <header class="mb-5 d-flex justify-content-between align-items-center flex-wrap">
             <h1 class="h2 mb-0">Details Game</h1>
             <i id="closeBtn" class="fa-solid fa-x" role="button"></i>
           </header> 
-            <div id="itemDetailsData" class="row gy-2 gx-0 gx-sm-5">
-              <div class="col-md-4">
-                <figure class="rounded rounded-3 overflow-hidden">
-                  <img src="./images/thumbnail.jpg" class="w-100" alt="">
-                </figure>
-              </div>
-              <div class="col-md-8">
-                <h3>Title: <span>Genshin Impact</span></h3>
-                <p>Category:<span class="ms-1 badge text-bg-info">Action RPG</span></p>
-                <p>Platform:<span class="ms-1 badge text-bg-info">Windows</span></p>
-                <p>Status:<span class="ms-1 badge text-bg-info">Live</span></p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid nulla quo consequuntur dolores autem, quos modi dolorum quibusdam nemo iste deserunt reprehenderit laborum eum beatae maiores officiis quas, iure quia qui tenetur voluptatum. Tempora ducimus alias corporis totam facilis amet odit neque at velit, reprehenderit magnam nemo, reiciendis maxime dolore numquam dolorum aliquid consequuntur quibusdam obcaecati ex fugiat dignissimos ad! Aperiam velit consectetur accusamus facere soluta laborum praesentium nam. Ex quasi doloribus voluptatibus suscipit. Consequatur sunt modi optio veniam tenetur dignissimos perspiciatis officia aliquid nemo sint vitae quisquam delectus laudantium corrupti non odit natus, recusandae ullam ab, tempora quis? In?</p>
-                <a href="google.com" target="_blank"  class="btn btn-outline-warning">Show Game</a>
-              </div>
+            <div id="gameDetailsData" class="row gy-2 gx-0 gx-sm-5">
           </div>   
         </div> 
       </div>
-    </section> -->
-
+    </section>
+    <div id="loader" class="position-fixed d-flex justify-content-center align-items-center top-50 start-50">
+      <span class="loader"></span>
+    </div>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/index.js" type="module"></script>
   </body>
